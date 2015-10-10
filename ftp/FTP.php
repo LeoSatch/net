@@ -1,11 +1,4 @@
 <?php
-
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 namespace symacopee\net;
 
 /**
@@ -14,5 +7,18 @@ namespace symacopee\net;
  * @author satch
  */
 class FTP {
-  //put your code here
+  protected static $_sHost;
+  protected static $_sUser;
+  protected static $_sPass;
+  protected static $_nPort;
+  protected static $_nTmout;
+  protected static $_oFP;
+  
+  public static function connect( $sHost, $nPort = 22, $sUser = 'anonymous', $sPass = null, $nTMOUT = 60 ) {
+    static::$_sHost = $sHost;
+    static::$_nPort = $nPort;
+    static::$_sUser = $sUser;
+    static::$_sPass = $sPass;
+    static::$_nPort = $nPort;
+  }
 }
